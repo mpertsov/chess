@@ -93,11 +93,11 @@ bool BoardState::loadFromFile(QString filename) {
     QList<FigureTurn> newLog;
 
     if (filename.contains("file:///")) {
-        if (QSysInfo::windowsVersion() != QSysInfo::WV_None) {
+#ifdef Q_OS_WIN
             filename = filename.replace("file:///", "");
-        } else {
+#else
             filename = filename.replace("file:///", "/");
-        }
+#endif
     }
     QFile file(filename);
     if (file.open(QIODevice::ReadOnly) == false) {
@@ -163,11 +163,15 @@ void BoardState::loadAccepted() {
 
 bool BoardState::saveToFile(QString filename) {
     if (filename.contains("file:///")) {
-        if (QSysInfo::windowsVersion() != QSysInfo::WV_None) {
-            filename = filename.replace("file:///", "");
-        } else {
-            filename = filename.replace("file:///", "/");
-        }
+#ifdef Q_OS_WIN
+        filename = filename.replace("file:///", "");
+#else
+        filename = filename.replace("file:///", "/");
+#endif
+    }
+
+    if (false == filename.endsWith(".qcs")) {
+        filename += ".qcs";
     }
 
     QFile file(filename);
