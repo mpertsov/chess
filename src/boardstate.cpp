@@ -320,8 +320,7 @@ bool BoardState::isMyOnThePath(Figure *figure, int endRow, int endCol) {
 
     if (startRow != endRow && startCol != endCol) {
         if (abs(startRow - endRow) != abs(startCol - endCol)) {
-            // too bad!
-            printf("isMyOnThePath: bad data!\n");
+            return false;
         } else {
             int steps = max(startRow - endRow, endRow - startRow);
             int rowMult = startRow > endRow ? -1 : 1;
@@ -379,8 +378,7 @@ bool BoardState::isEnemyInTheMiddle(Figure *figure, int endRow, int endCol) {
 
     if (startRow != endRow && startCol != endCol) {
         if (abs(startRow - endRow) != abs(startCol - endCol)) {
-            // too bad!
-            printf("isEnemyInTheMiddle: bad data!\n");
+            return false;
         } else {
             int steps = max(startRow - endRow, endRow - startRow);
             int currentRow = startRow;
