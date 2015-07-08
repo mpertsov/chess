@@ -4,7 +4,6 @@ import QtQuick.Dialogs 1.0
 FileDialog {
     id: saveDialog
     title: "Save"
-    folder: shortcuts.home
     selectExisting: false
     nameFilters: [ "Save files (*.qcs)" ]
     onAccepted: {

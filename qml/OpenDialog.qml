@@ -6,7 +6,6 @@ FileDialog {
 
     id: openDialog
     title: "Open"
-    folder: shortcuts.home
     nameFilters: [ "Save files (*.qcs)" ]
     onAccepted: {
         var success = boardState.loadFromFile(fileUrl);
