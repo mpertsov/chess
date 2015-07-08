@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Main.qml</file>
+        <file>qml/BoardItem.qml</file>
+        <file>qml/FigureItem.qml</file>
+        <file>qml/SaveDialog.qml</file>
+        <file>qml/OpenDialog.qml</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>images/bishop-b.svg</file>
+        <file>images/bishop-w.svg</file>
+        <file>images/king-b.svg</file>
+        <file>images/king-w.svg</file>
+        <file>images/knight-b.svg</file>
+        <file>images/knight-w.svg</file>
+        <file>images/pawn-b.svg</file>
+        <file>images/pawn-w.svg</file>
+        <file>images/queen-b.svg</file>
+        <file>images/queen-w.svg</file>
+        <file>images/rook-b.svg</file>
+        <file>images/rook-w.svg</file>
+    </qresource>
+</RCC>
